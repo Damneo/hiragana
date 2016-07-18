@@ -56,11 +56,12 @@ body {
 
 .score {
 
-	font-size: 20px;
+	font-size: 16px;
     padding: 8px;
     color: #fff;
     background: #A1D490;
     margin-left: 18px;
+    border:1px solid #000;
 }
 
 
