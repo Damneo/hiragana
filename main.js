@@ -35,6 +35,9 @@ var hiragana = [
 	{"mu" : "む"},
 	{"me" : "め"},
 	{"mo" : "も"},
+	{"ya" : "や"},
+	{"yu" : "ゆ"},
+	{"yo" : "よ"},
 ];
 
 function shuffle(sourceArray) {
