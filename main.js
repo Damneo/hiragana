@@ -43,15 +43,6 @@ function generateCopyHiragana() {
 	});
 }
 
-function copyClipBoard() {
-
-	new Clipboard('#copy-hiragana input');
-	
-	$("#copy-hiragana input").on("click", function(){
-		console.log($(this).val());
-	});
-}
-
 function generateItems(show) {
 
 	$("#container").empty();
@@ -72,10 +63,17 @@ function checkInput() {
 
 		if (hide == text) {
 			$(this).parent().addClass("success");
+			updateScore();
 		} else {
 			$(this).parent().removeClass("success");
+			updateScore();
 		}
 	});
+}
+
+function updateScore() {
+
+	$(".score").empty().text("Score : " + $(".item.success").length);
 }
 
 //MAIN
@@ -84,13 +82,15 @@ $(document).ready(function(){
 	$(".generate.hira").click(function() {
 		generateItems("hiragana");
 		$("#copy-hiragana").hide();
+		updateScore();
 	});
 
 	$(".generate.roma").click(function() {
 		generateCopyHiragana();
 		generateItems("romaji");
 		$("#copy-hiragana").show();
-		copyClipBoard();
+		new Clipboard('#copy-hiragana input');
+		updateScore();
 	});
 });
 

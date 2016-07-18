@@ -54,6 +54,15 @@ body {
 	margin-right: 10px;
 }
 
+.score {
+
+	font-size: 20px;
+    padding: 8px;
+    color: #fff;
+    background: #A1D490;
+    margin-left: 18px;
+}
+
 
 .item {
 	border:1px solid #000;
