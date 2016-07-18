@@ -34,6 +34,24 @@ function generateItem(obj,show) {
 	return "<div class='item' attr-hide='"+ hide +"'><div class='show'>"+ display +"</div><input type='text'></div>";
 }
 
+function generateCopyHiragana() {
+
+	$("#copy-hiragana").empty();
+	$(hiragana).each(function(k,o){
+		
+		$("#copy-hiragana").append("<input data-clipboard-text='"+o[Object.keys(o)]+"' class='hiragana-bn' type='button' value='"+o[Object.keys(o)]+"'>");
+	});
+}
+
+function copyClipBoard() {
+
+	new Clipboard('#copy-hiragana input');
+	
+	$("#copy-hiragana input").on("click", function(){
+		console.log($(this).val());
+	});
+}
+
 function generateItems(show) {
 
 	$("#container").empty();
@@ -65,10 +83,14 @@ $(document).ready(function(){
 
 	$(".generate.hira").click(function() {
 		generateItems("hiragana");
+		$("#copy-hiragana").hide();
 	});
 
 	$(".generate.roma").click(function() {
+		generateCopyHiragana();
 		generateItems("romaji");
+		$("#copy-hiragana").show();
+		copyClipBoard();
 	});
 });
 
