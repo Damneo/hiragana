@@ -38,6 +38,11 @@ var hiragana = [
 	{"ya" : "や"},
 	{"yu" : "ゆ"},
 	{"yo" : "よ"},
+	{"ra" : "ら"},
+	{"ri" : "り"},
+	{"ru" : "る"},
+	{"re" : "れ"},
+	{"ro" : "ろ"},
 ];
 
 function shuffle(sourceArray) {
