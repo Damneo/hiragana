@@ -65,8 +65,13 @@ function checkInput() {
 			$(this).parent().addClass("success");
 			updateScore();
 		} else {
-			$(this).parent().removeClass("success");
-			updateScore();
+			if (text == "") {
+				$(this).parent().removeClass("error");
+				$(this).parent().removeClass("success");
+				updateScore();
+			} else {
+				$(this).parent().addClass("error");
+			}
 		}
 	});
 }
