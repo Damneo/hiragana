@@ -11,6 +11,11 @@ var hiragana = [
 	{"ra":"ら"},{"ri":"り"},{"ru":"る"},{"re":"れ"},{"ro":"ろ"},
 	{"wa":"わ"},{"wo":"を"},
 	{"n":"ん"},
+	{"ga":"が"},{"gi":"ぎ"},{"gu":"ぐ"},{"ge":"げ"},{"go":"ご"},
+	{"za":"ざ"},{"ji":"じ"},{"zu":"ず "},{"ze":"ぜ"},{"zo":"ぞ"},
+	{"da":"だ"},{"di":"ぢ"},{"du":"づ"},{"de":"で"},{"do":"ど"},
+	{"ba":"ば"},{"bi":"び"},{"bu":"ぶ"},{"be":"べ"},{"bo":"ぼ"},
+	{"pa":"ぱ"},{"pi":"ぴ"},{"pu":"ぷ"},{"pe":"ぺ"},{"po":"ぽ"},
 ];
 
 function shuffle(sourceArray) {
@@ -62,7 +67,7 @@ function checkInput() {
 		var text = $(this).val();
 
 		if (hide == text) {
-			$(this).parent().addClass("success");
+			$(this).parent().removeClass("error").addClass("success");
 			updateScore();
 		} else {
 			if (text == "") {
