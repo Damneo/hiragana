@@ -61,17 +61,24 @@ function checkInput() {
 		var hide = $(this).parent().attr("attr-hide");
 		var text = $(this).val();
 
+		$(this).parent().removeClass("error");
 		if (hide == text) {
+			$(this).parent().removeClass("error");
 			$(this).parent().addClass("success");
 			updateScore();
 		} else {
-			if (text == "") {
-				$(this).parent().removeClass("error");
-				$(this).parent().removeClass("success");
-				updateScore();
-			} else {
-				$(this).parent().addClass("error");
-			}
+			$(this).parent().removeClass("success");
+			updateScore();
+		}
+	});
+
+	$(".item input").on("focusout", function(){
+
+		var text = $(this).val();
+		$(this).parent().removeClass("error");
+
+		if (text != "" && $(this).parent().attr("attr-hide") != text) {
+			$(this).parent().addClass("error");
 		}
 	});
 }
